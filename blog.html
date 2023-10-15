@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog</title>
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="p-5 border-8 border-sky-500 m-4">
+        <div>
+    <h1 class="text-2xl font-semibold">1 . Discuss the scope of var, let, and const</h1></div>
+    <p> <span class="text-xl font-semibold">Ans: </span>In JavaScript, `var`, `let`, and `const` are used to declare variables, but they have different scopes and behaviors. Let's discuss the scope of each of these variable declarations:
+<p>
+      <span class="text-xl font-semibold"> 1. var:</span>
+           - **Function Scope** : Variables declared with `var` are function-scoped. This means that they are only accessible within the function in which they are defined, or globally if defined outside of any function.
+           - **Hoisting**: Variables declared with `var` are hoisted to the top of their containing function or the global scope. This means they can be used before they are declared, but they will have an initial value of `undefined`.
+           <br> <U>Example:</U><br>
+               <div class="bg-slate-300 rounded-xl p-5 mt-2">
+             <span class="text-xl font-semibold">javascript:</span>
+             <br>
+             function example() {
+               if (true) {
+                 var x = 10;
+               }
+               console.log(x); // 10, even though it's declared within the if block
+             } </div>
+             <br>
+             
+            </p>
+      <span class="text-xl font-semibold">  2. let :</span>
+           - **Block Scope**: Variables declared with `let` have block scope, which means they are only accessible within the nearest enclosing curly braces (`{}`), such as in a loop, a conditional statement, or a function.
+           - **No Hoisting**: Unlike `var`, variables declared with `let` are not hoisted, so they cannot be used before they are declared.
+           <br> <U>Example:</U><br>
+           <div class="bg-slate-300 rounded-xl p-5 mt-2">
+         <span class="text-xl font-semibold">javascript:</span>
+         <br>
+             function example() {
+               if (true) {
+                 let x = 10;
+               }
+               console.log(x); // ReferenceError: x is not defined
+             }</div>
+             <br>
+        <p>
+            <span class="text-xl font-semibold">  3. const : </span>
+           - **Block Scope**: Like `let`, variables declared with `const` have block scope and are only accessible within the nearest enclosing curly braces.
+           - **No Reassignment**: Variables declared with `const` cannot be reassigned after they are initialized. However, the value they are assigned can still be mutated if it's an object or an array.
+           - **No Hoisting**: Just like `let`, `const` variables are not hoisted and must be declared before use.
+           <br> <U>Example:</U><br>
+           <div class="bg-slate-300 rounded-xl p-5 mt-2">
+         <span class="text-xl font-semibold">javascript:</span>
+         <br>
+             function example() {
+               if (true) {
+                 const x = 10;
+                 x = 20; // Error: Assignment to constant variable
+               }
+             }</div>
+             </p>
+        
+                 <p>         In modern JavaScript, it's recommended to use `let` and `const` over `var` because they provide more predictable and controllable variable scoping and avoid some of the issues associated with `var`, such as unintentional hoisting and global scope pollution. Use `let` when you need to reassign a variable's value, and use `const` when you want a variable that should not be reassigned. This helps improve code clarity and reduces the chances of unexpected behavior.</p> </p>
+    </div>
+       
+    <div class="p-5 border-8 border-pink-500 m-4">
+
+        <div>
+            <h1 class="text-2xl font-semibold">2 .  Tell us the use cases of null and undefined.</h1></div>
+
+<p>
+    <span class="text-xl font-semibold">Ans: </span> In JavaScript, null and undefined are two distinct values with specific use cases:
+</p>
+<p>
+    <span class="text-xl font-semibold"> a . null:</span> 
+    <br>
+   <ol >
+    <li> <span class="text-xl font-semibold">Intentional Absence of Value: </span> null is a value that represents the intentional absence of any object value or a placeholder for a value that should exist but doesn't.</li>
+    <li> <span class="text-xl font-semibold"> Clearing Object Values:</span>  It's often used to clear the value of an object or variable.</li>
+    <li> <span class="text-xl font-semibold">As a Placeholder:</span>  You can use null as a placeholder until a value is assigned.</li>
+    <li> <span class="text-xl font-semibold"> Comparisons:</span> It can be explicitly compared to an object to check if the object has a value or not.</li>
+    <li> <span class="text-xl font-semibold">Variable Initialization :</span> It's a common practice to initialize variables with null when they don't yet have a value.</li>
+   </ol>
+   <br> <U>Example:</U><br>
+           <div class="bg-green-300 rounded-xl p-5 mt-2">
+         <span class="text-xl font-semibold">javascript:</span>
+         <br>
+         let person = null; // No person object assigned yet
+           </div>
+</p>
+      
+<p>
+    <span class="text-xl font-semibold"> b . undefined:</span> 
+    <br>
+   <ol >
+    <li> <span class="text-xl font-semibold">Variable Declaration: </span>When a variable is declared but not initialized, it is undefined by default.</li>
+    <li> <span class="text-xl font-semibold">Function Parameters: </span>Function parameters that are not provided a value become undefined. </li>
+    <li> <span class="text-xl font-semibold">Object Properties:</span> If you try to access an object property that doesn't exist, it returns undefined. </li>
+    <li> <span class="text-xl font-semibold">Return Value: </span> If a function does not have a return statement or returns nothing, it returns undefined.</li>
+    <li> <span class="text-xl font-semibold">Array Elements:</span>Accessing an array element beyond its length or accessing uninitialized array elements returns undefined. </li>
+   </ol>
+   <br> <U>Example:</U><br>
+           <div class="bg-green-300 rounded-xl p-5 mt-2">
+         <span class="text-xl font-semibold">javascript:</span>
+         <br>
+         let x; // x is undefined
+         function exampleFunction(y) {
+           console.log(y); // y is undefined if no argument is passed
+         }
+         let obj = { name: 'John' };
+         console.log(obj.age); // age property doesn't exist, so it's undefined
+         let arr = [1, 2, 3];
+         console.log(arr[10]); // accessing an out-of-range element returns undefined
+         
+           </div>
+</p>
+<p>
+    Overall, null is typically used to represent the absence of a value that should be there, whereas undefined often represents the absence of a value due to a lack of initialization or access to a non-existent property. Understanding the distinctions between these two values is essential for writing correct and effective JavaScript code.
+</p>
+    </div>
+
+    <div class="p-5 border-8 border-red-500 m-4">
+        <div>
+            <h1 class="text-2xl font-semibold">3 . What do you mean by REST API?</h1></div>
+           <p> <span class="text-xl font-semibold">Ans: </span>REST, which stands for Representational State Transfer, is an architectural style and set of constraints for designing networked applications. A RESTful API (Representational State Transfer API) is a type of web service that adheres to the principles and constraints of REST. Here are the key concepts of RESTful APIs:
+           </p>
+           <p>
+           <ol>
+
+         <li> <span class="text-xl font-semibold">  1. **Resources**: </span>In REST, everything is treated as a resource, which can be an object, data, or service that the API deals with. Each resource is identified by a unique URL, often referred to as a URI (Uniform Resource Identifier).</li>
+            
+         <li> <span class="text-xl font-semibold">2. **HTTP Verbs (Methods)**: </span> RESTful APIs use HTTP methods to perform CRUD (Create, Read, Update, Delete) operations on resources. The most commonly used HTTP methods are:
+            <ol>
+            <li> <span class="text-sm font-semibold">**GET**:</span> Used to retrieve data from the server.</li> 
+               <li> <span class="text-sm font-semibold">**POST**: </span> Used to create new resources on the 
+            server.</li>
+               <li><span class="text-sm font-semibold">**PUT**:</span>  Used to update or replace existing resources.</li>
+               <li> <span class="text-sm font-semibold">**PATCH**: </span>Used to partially update an existing resource.</li>
+               <li> <span class="text-sm font-semibold">**DELETE**:</span> Used to remove a resource from the server.</li>
+             </ol>
+            </li>
+          <li ><span class="text-xl font-semibold">  3. **Stateless**:</span>
+           REST APIs are stateless, meaning that each request from a client to the server must contain all the information needed to understand and process the request. The server does not store any information about the client's state.</li>
+            
+          <li> <span class="text-xl font-semibold"> 4. **Representation**:</span> Resources can have multiple representations, such as JSON, XML, HTML, or other formats. Clients and servers can negotiate the format they prefer.</li>
+            
+          <li><span class="text-xl font-semibold"> 5. **Uniform Interface**:</span>  RESTful APIs have a consistent and uniform interface. The use of standard HTTP methods and status codes simplifies interactions between clients and servers.</li>
+            
+           <li> <span class="text-xl font-semibold">6. **Statelessness**:</span> Each request from a client to the server must contain all the information needed to understand and process the request. The server does not store any client state. This helps improve scalability and reliability.</li>
+            
+         <li> <span class="text-xl font-semibold"> 7. **Layered System**:</span>  A REST API can be designed as a layered system with different components (e.g., load balancers, caches, gateways) that can be added to improve scalability and security.</li>
+            
+          <li><span class="text-xl font-semibold"> 8. **Client-Server**:</span>
+
+          REST follows a client-server architecture, where the client and server are separate entities. This separation allows for flexibility in the development of both clients and servers. </li> 
+            
+            <li><span class="text-xl font-semibold">  9. **Cacheability**: </span>
+          Responses from the server can be explicitly marked as cacheable or non-cacheable. Caching improves the performance and reduces the load on the server.</li>
+        </ol>
+           </p>
+            
+          <p class="mt-2">  RESTful APIs are widely used for building web services, and they are known for their simplicity, scalability, and ease of integration with various programming languages and technologies. They are commonly used for building web applications, mobile apps, and integrating different systems and services over the internet.
+           </p>
+
+    </div>
+    <script src="js/style.js"></script>
+    </body>
+    
+</html>
